@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% load static %} 
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SPOOTIFY</title>
+    <script src="https://cdn.tailwindcss.com/3.4.3"></script>
+  </head>
+  <body class="bg-gray-100">
+    <div class="mx-auto py-8">
+      <div
+        class="max-w-4xl p-3 mx-auto bg-white rounded-lg shadow-lg overflow-hidden gap-8 flex items-center justify-between"
+      >
+        <div class="w-fit">
+          <div class="h-20 bg-gray-200 flex justify-center items-center">
+            <img
+              class="h-full"
+              src="https://via.placeholder.com/150"
+              alt="Song Poster"
+            />
+          </div>
+        </div>
+        <div class="font-bold text-xl mb-2">
+          <p class="text-xl">Song Name</p>
+          <p class="text-sm">Artist Name</p>
+        </div>
+
+        <div class="flex-grow">
+          <button
+            id="playButton"
+            class="bg-green-500 text-white rounded-full w-12 h-12 flex justify-center items-center"
+            onclick="playMusic()"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 3v18l18-9L5 3z"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function playMusic() {
+        const songUrl = '../static/music/Loosu-Penne-MassTamilan.org.mp3';
+        const audio = new Audio(songUrl);
+        audio.play();
+      }
+    </script>
+  </body>
+</html>
